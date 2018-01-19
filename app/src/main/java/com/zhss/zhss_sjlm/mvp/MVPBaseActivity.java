@@ -9,6 +9,9 @@ import com.zhss.zhss_sjlm.base.BaseActivity;
 
 import java.lang.reflect.ParameterizedType;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 
 /**
  * MVPPlugin
@@ -17,10 +20,13 @@ import java.lang.reflect.ParameterizedType;
 
 public abstract class MVPBaseActivity<V extends BaseView,T extends BasePresenterImpl<V>> extends BaseActivity implements BaseView{
     public T mPresenter;
+    private Unbinder bind;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter= getInstance(this,1);
+        bind = ButterKnife.bind(this);
         mPresenter.attachView((V) this);
     }
 
