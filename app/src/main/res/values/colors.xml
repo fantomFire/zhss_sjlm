@@ -51,4 +51,5 @@
     <color name="ml_white">#ffffffff</color>
     <color name="ml_blue">#ff239efe</color>
     <color name="ml_red">#ffff0000</color>
+    <color name="b5b5b5">#222222</color>
 </resources>

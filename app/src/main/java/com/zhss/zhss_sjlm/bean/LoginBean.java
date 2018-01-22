@@ -7,4 +7,12 @@ package com.zhss.zhss_sjlm.bean;
 public class LoginBean {
     public String status;
     public String msg;
+
+    @Override
+    public String toString() {
+        return "LoginBean{" +
+                "status='" + status + '\'' +
+                ", msg='" + msg + '\'' +
+                '}';
+    }
 }
