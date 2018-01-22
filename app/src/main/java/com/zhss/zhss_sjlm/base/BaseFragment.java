@@ -28,7 +28,7 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (rootView == null) {
-            rootView = inflater.inflate(getContentView(), container, false);
+            rootView = inflater.inflate(getLayoutId(), container, false);
             mContext = getActivity();
             unbinder = ButterKnife.bind(this, rootView);
         }
@@ -51,7 +51,7 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
     /**
      * 加载布局文件
      */
-    public abstract int getContentView();
+    public abstract int getLayoutId();
     
 
    
