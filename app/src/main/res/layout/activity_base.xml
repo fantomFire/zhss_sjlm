@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  >
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/back" />
+        </LinearLayout>
+
+        <!--<TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity=""
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               android:layout_toLeftOf="@+id/iv_dian"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:layout_marginRight="15dp"
+                android:visibility="gone"
+                android:text="保存"/>-->
+          <!--  <TextView
+                android:id="@+id/tv_save2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/iv_dian"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="保存"
+                android:visibility="gone"/>-->
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:gravity="right|center"
+                android:id="@+id/tv_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/df1839"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="提交"/>
+          <!--  <ImageView
+                android:id="@+id/iv_dian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/dian"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/iv_help"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                android:background="@mipmap/help"/>
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_delet"
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/delet"
+                android:visibility="gone" />
+-->
+
+     <!--   </RelativeLayout>-->
+
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fl_base_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

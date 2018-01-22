@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_sec_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="2dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:textColor="@color/color666"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp">
+
+        <com.example.sjlm.tools.CircleImageView
+            android:id="@+id/iv_sec_user_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:focusable="false" />
+
+        <TextView
+            android:padding="8dp"
+            android:id="@+id/tv_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_sec_user_image"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:lineSpacingExtra="2dp"
+            android:textSize="16sp" />
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/iv_sec"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerVertical="true"
+            android:scaleType="matrix"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_sec_user_image"
+            android:clickable="true"
+            android:focusable="true"
+            android:lineSpacingExtra="2dp"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

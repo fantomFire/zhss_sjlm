@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:melove="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+    <com.example.sjlm.tools.MLImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@mipmap/meishi"
+        android:layout_marginRight="8dp"
+        melove:radius="7dp"
+        melove:shape_type="rectangle" />
+
+</LinearLayout>

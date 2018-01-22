@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".aty.MessageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="13dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/back"
+            android:contentDescription="@null"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="110dp"
+                android:layout_height="35dp"
+                android:background="@drawable/title_left_selector"
+                android:gravity="center"
+                android:text="通知"
+                android:textColor="@drawable/message_text_selector"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_title_right"
+                android:layout_width="110dp"
+                android:layout_height="35dp"
+                android:background="@drawable/title_right_selector"
+                android:gravity="center"
+                android:text="私信"
+                android:textColor="@drawable/message_text_selector"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorEC" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
