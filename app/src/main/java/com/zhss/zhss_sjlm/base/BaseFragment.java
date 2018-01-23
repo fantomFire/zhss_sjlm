@@ -52,14 +52,15 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
      * 加载布局文件
      */
     public abstract int getLayoutId();
-    
 
-   
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        if (unbinder != null) {
+
+            unbinder.unbind();
+        }
     }
 
 }
