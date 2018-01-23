@@ -80,7 +80,8 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresent> impleme
             case R.id.btn_login:
 
                 System.out.println("账号" + edtPhone.getText().toString());
-                getPresenter().login(edtPhone.getText().toString(), edtPass.getText().toString());
+              //  getPresenter().login(edtPhone.getText().toString(), edtPass.getText().toString());
+                startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.tv_register:
                 break;

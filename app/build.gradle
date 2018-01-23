@@ -16,13 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions {
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/notice'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/license'
-        exclude 'META-INF/license.txt'
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
     }
 }
 
@@ -55,6 +52,8 @@ dependencies {
 
     // animator providers
     compile 'com.github.nukc.stateview:animations:1.0.1'
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+
 
 
 }
