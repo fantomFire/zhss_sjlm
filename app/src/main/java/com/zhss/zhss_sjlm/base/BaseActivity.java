@@ -4,7 +4,6 @@ package com.zhss.zhss_sjlm.base;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.Window;
 
 import com.github.nukc.stateview.StateView;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
@@ -23,17 +22,19 @@ public abstract class BaseActivity<V extends MvpView,T extends BasePresent<V>> e
 
     private Unbinder bind;
     public StateView mStateView;
+    private T mPresent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉状态栏
-
+       // this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉状态栏
+        getSupportActionBar().hide();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//禁止横屏
         setContentView(getLayout());
 
         bind = ButterKnife.bind(this);
        // AppManager.getAppManager().addActivity(this);
+
         initView();
         initData();
     }

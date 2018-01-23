@@ -16,6 +16,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+import com.zhss.zhss_sjlm.R;
 
 
 /**

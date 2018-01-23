@@ -58,6 +58,11 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresent> impleme
     }
 
     @Override
+    protected void initData() {
+
+    }
+
+    @Override
     protected void initView() {
 
     }

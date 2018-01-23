@@ -1,20 +1,21 @@
 package com.zhss.zhss_sjlm;
 
-import android.support.annotation.NonNull;
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.widget.LinearLayout;
+import android.view.Window;
 
-import com.zhss.zhss_sjlm.base.BaseActivity;
-import com.zhss.zhss_sjlm.present.CateGreyPresent;
 import com.zhss.zhss_sjlm.tools.PrefUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends Activity {
     private static final String[] FIVE = new String[]{"首页", "分类", "商家中心", "发现", "我的"};
     private static final String[] FOUR = new String[]{"首页", "分类", "发现", "我的"};
     private static final Integer[] IMAGES1_FIVE = new Integer[]{R.mipmap.f1a, R.mipmap.f2a, R.mipmap.f3a, R.mipmap.f4a, R.mipmap.f5a};
@@ -32,30 +33,39 @@ public class MainActivity extends BaseActivity {
 
     private String member_type;
     private boolean isExit = false;
+    private Unbinder bind;
 
-
-    @NonNull
     @Override
-    public CateGreyPresent createPresenter() {
-        return null;
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(getLayout());
+        bind = ButterKnife.bind(this);
+        initView();
+        initData();
     }
 
-    @Override
     protected void initData() {
         member_type = PrefUtils.getString(this, "member_type", "1");
 
     }
 
-    @Override
+
     protected void initView() {
 
 
     }
 
-    @Override
+
     protected int getLayout() {
         return R.layout.activity_main;
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(bind!=null){
+            bind.unbind();
+        }
+    }
 }

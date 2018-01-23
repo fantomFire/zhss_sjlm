@@ -22,8 +22,7 @@ import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.example.sjlm.R;
-
+import com.zhss.zhss_sjlm.R;
 
 @SuppressLint("AppCompatCustomView")
 public class CircleImageView extends ImageView {
