@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     private ViewPager mViewPager;
     public static MainActivity MAIN;
 
+
     private String userid;
 
     private String member_type;
