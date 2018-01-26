@@ -14,6 +14,8 @@ import com.zhss.zhss_sjlm.R;
 import com.zhss.zhss_sjlm.base.BaseActivity;
 import com.zhss.zhss_sjlm.bean.LoginBean;
 import com.zhss.zhss_sjlm.present.LoginPresent;
+import com.zhss.zhss_sjlm.ui.aitivity.ForgetPassActivity;
+import com.zhss.zhss_sjlm.ui.aitivity.RegisterActivity;
 import com.zhss.zhss_sjlm.view.LoginView;
 
 import butterknife.BindView;
@@ -49,7 +51,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresent> impleme
     public void success(LoginBean data) {
         System.out.println("登陆成功" + data.toString());
         startActivity(new Intent(this, MainActivity.class));
-      //  finish();
+        //  finish();
     }
 
     @Override
@@ -64,7 +66,13 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresent> impleme
 
     @Override
     protected void initView() {
-
+        Intent intent = getIntent();
+        if (intent != null) {
+            String mPhone = intent.getStringExtra("mPhone");
+            String mPass = intent.getStringExtra("mPass");
+            edtPhone.setText(mPhone);
+            edtPass.setText(mPass);
+        }
     }
 
     @Override
@@ -73,19 +81,19 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresent> impleme
     }
 
 
-
     @OnClick({R.id.btn_login, R.id.tv_register, R.id.tv_forget})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
 
-                System.out.println("账号" + edtPhone.getText().toString());
-              //  getPresenter().login(edtPhone.getText().toString(), edtPass.getText().toString());
-                startActivity(new Intent(this, MainActivity.class));
+                // getPresenter().login(edtPhone.getText().toString(), edtPass.getText().toString());
+                //    startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.tv_register:
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
             case R.id.tv_forget:
+                startActivity(new Intent(this, ForgetPassActivity.class));
                 break;
         }
     }

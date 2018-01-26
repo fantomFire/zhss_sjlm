@@ -47,7 +47,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:background="@mipmap/yaz_" />
 
         <EditText
@@ -89,57 +89,24 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:background="@mipmap/mima_" />
 
         <EditText
-            android:id="@+id/et_mpass"
+            android:id="@+id/new_pass"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="6dp"
             android:layout_weight="2"
             android:background="@drawable/login_edit"
-            android:hint="输入密码"
+            android:hint="输入新密码"
             android:lines="1"
             android:paddingLeft="17dp"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/text666" />
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:gravity="center">
-
-        <RadioButton
-            android:id="@+id/rb_reg"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/radio"
-            android:button="@null"
-            android:checked="true" />
-
-        <TextView
-            android:id="@+id/tv_agreement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="注册即表示同意"
-            android:textColor="@color/d8a5ff" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="《商家联盟网络服务协议》"
-            android:textColor="@color/d562fe"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
@@ -149,7 +116,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/login_bg"
         android:text="提交"
         android:textColor="@color/colorWhite" />

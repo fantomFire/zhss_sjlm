@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -74,7 +76,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,28 +86,10 @@
 
             <include layout="@layout/viewbackground" />
 
-            <!-- <RelativeLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="140dp">
-
-                 <android.support.v4.view.ViewPager
-                     android:id="@+id/myviewpager"
-                     android:layout_width="match_parent"
-                     android:layout_height="140dp" />
-
-                 <LinearLayout
-                     android:id="@+id/ll_content"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_alignParentBottom="true"
-                     android:layout_marginBottom="15dp"
-                     android:gravity="center"
-                     android:orientation="horizontal" />
-             </RelativeLayout>-->
-         <!--   <com.jude.rollviewpager.RollPagerView
-                android:id="@+id/myviewpager"
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
                 android:layout_width="match_parent"
-                android:layout_height="140dp" />-->
+                android:layout_height="180dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -393,13 +378,15 @@
                 android:text="盛世之美"
                 android:textColor="#f5511e"
                 android:textSize="18sp" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rec_sszm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rec_sszm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
         </LinearLayout>

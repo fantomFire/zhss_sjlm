@@ -9,4 +9,5 @@ import com.hannesdorfmann.mosby.mvp.MvpView;
 public interface BaseView extends MvpView {
     void loadSuccess(Object data);
     void loadFail(Object data);
+
 }
