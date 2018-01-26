@@ -99,9 +99,13 @@ public class HomeFragment extends BaseFragment<BaseView, HomePresent> implements
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/1.jpg");
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/4.jpg");
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/1.jpg");
-        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(imgs);
+        banner.isAutoPlay(true);
+        banner.setDelayTime(2000);
+        banner.setIndicatorGravity(BannerConfig.CENTER);
+        banner.start();
 
     }
 

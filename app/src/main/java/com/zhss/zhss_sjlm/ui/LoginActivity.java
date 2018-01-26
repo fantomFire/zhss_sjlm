@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresent> impleme
             case R.id.btn_login:
 
                 // getPresenter().login(edtPhone.getText().toString(), edtPass.getText().toString());
-                //    startActivity(new Intent(this, MainActivity.class));
+                   startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.tv_register:
                 startActivity(new Intent(this, RegisterActivity.class));

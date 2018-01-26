@@ -3,6 +3,7 @@ package com.zhss.zhss_sjlm.tools;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.youth.banner.loader.ImageLoader;
 
 /**
