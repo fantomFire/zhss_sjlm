@@ -2,15 +2,12 @@ package com.zhss.zhss_sjlm.ui.fragment;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.github.nukc.stateview.StateView;
@@ -23,13 +20,12 @@ import com.zhss.zhss_sjlm.view.BaseView;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
-import net.lucode.hackware.magicindicator.buildins.UIUtil;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +43,7 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
     MagicIndicator discoverMigic;
     @BindView(R.id.discover_vp)
     ViewPager discoverVp;
-    Unbinder unbinder;
-    @BindView(R.id.fl_content)
-    FrameLayout flContent;
+;
     Unbinder unbinder1;
 
     private StateView mstateview;
@@ -78,6 +72,7 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
         System.out.println("mfragemt"+fragments.size());
         //给viewpager 设置adapter
         discoverVp.setAdapter(new FrageVpAdapter(getChildFragmentManager(), fragments));
+        discoverVp.requestDisallowInterceptTouchEvent(true);
         discoverVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -99,7 +94,7 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
 
     //设置栏目数据
     private void initTitle() {
-        CommonNavigator commonNavigator = new CommonNavigator(getActivity());
+        CommonNavigator commonNavigator = new CommonNavigator(mContext);
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
             @Override
             public int getCount() {
@@ -108,11 +103,11 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
 
             @Override
             public IPagerTitleView getTitleView(Context context, final int i) {
-                ClipPagerTitleView simplePagerTitleView = new ClipPagerTitleView(context);
+                ColorTransitionPagerTitleView simplePagerTitleView = new ColorTransitionPagerTitleView(context);
                 simplePagerTitleView.setText(mtitles.get(i).getFind_name());
-                simplePagerTitleView.setTextColor(getResources().getColor(R.color.colorBlack));
-//                simplePagerTitleView.setPadding(30,0,30,0);
-                simplePagerTitleView.setTextSize(30);
+                simplePagerTitleView.setTextSize(17);
+                simplePagerTitleView.setNormalColor(Color.parseColor("#444444"));
+                simplePagerTitleView.setSelectedColor(Color.parseColor("#df1839"));
 
                 simplePagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -128,27 +123,14 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
 
             @Override
             public IPagerIndicator getIndicator(Context context) {
-                LinePagerIndicator triangularPagerIndicator = new LinePagerIndicator(context);
-//                triangularPagerIndicator.setXOffset(20);
-                triangularPagerIndicator.setLineHeight(2);
-
-                triangularPagerIndicator.setLineWidth(115);
-
-                triangularPagerIndicator.setMode(triangularPagerIndicator.MODE_EXACTLY);
-                triangularPagerIndicator.setColors(Color.parseColor("#f5511e"));
-                return triangularPagerIndicator;
+                LinePagerIndicator linePagerIndicator = new LinePagerIndicator(context);
+                linePagerIndicator.setMode(linePagerIndicator.MODE_WRAP_CONTENT);
+                linePagerIndicator.setColors(getResources().getColor(R.color.df1839));
+                return linePagerIndicator;
             }
         });
+
         discoverMigic.setNavigator(commonNavigator);
-        LinearLayout titleContainer = commonNavigator.getTitleContainer();
-        titleContainer.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
-        titleContainer.setDividerDrawable(new ColorDrawable() {
-            @Override
-            public int getIntrinsicWidth() {
-                return UIUtil.dip2px(getActivity(), 15);
-            }
-
-        });
         ViewPagerHelper.bind(discoverMigic, discoverVp);
 
 
