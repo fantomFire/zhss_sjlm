@@ -11,6 +11,11 @@ import com.zhss.zhss_sjlm.view.BaseView;
 
 public class ClassifyFragment extends BaseFragment<BaseView,CateGreyPresent> implements BaseView {
     @Override
+    protected void intData() {
+
+    }
+
+    @Override
     protected void initView() {
 
     }

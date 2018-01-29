@@ -30,13 +30,14 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
         if (rootView == null) {
             rootView = inflater.inflate(getLayoutId(), container, false);
             mContext = getActivity();
-            unbinder = ButterKnife.bind(this, rootView);
-        }
 
+        }
         ViewGroup parent = (ViewGroup) rootView.getParent();
         if (parent != null) {
             parent.removeView(rootView);
         }
+        unbinder = ButterKnife.bind(this, rootView);
+
         return rootView;
     }
 
@@ -44,7 +45,10 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
+        intData();
     }
+
+    protected abstract void intData();
 
     protected abstract void initView();
 

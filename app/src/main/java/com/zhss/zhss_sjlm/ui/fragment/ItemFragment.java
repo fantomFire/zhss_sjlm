@@ -2,14 +2,14 @@ package com.zhss.zhss_sjlm.ui.fragment;
 
 import com.zhss.zhss_sjlm.R;
 import com.zhss.zhss_sjlm.base.BaseFragment;
-import com.zhss.zhss_sjlm.present.MerchantPresent;
+import com.zhss.zhss_sjlm.present.DiscocerItemPresent;
 import com.zhss.zhss_sjlm.view.BaseView;
 
 /**
- * Created by win7-64 on 2018/1/23.
+ * Created by win7-64 on 2018/1/29.
  */
 
-public class MerchantFragment extends BaseFragment<BaseView,MerchantPresent> implements BaseView{
+public class ItemFragment extends BaseFragment<BaseView,DiscocerItemPresent> implements BaseView{
     @Override
     protected void intData() {
 
@@ -22,12 +22,12 @@ public class MerchantFragment extends BaseFragment<BaseView,MerchantPresent> imp
 
     @Override
     public int getLayoutId() {
-       return R.layout.fragment_merchant;
+        return R.layout.fragment_item;
     }
 
     @Override
-    public MerchantPresent createPresenter() {
-        return new MerchantPresent();
+    public DiscocerItemPresent createPresenter() {
+        return new DiscocerItemPresent();
     }
 
     @Override

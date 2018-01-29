@@ -81,7 +81,12 @@ public class HomeFragment extends BaseFragment<BaseView, HomePresent> implements
     Banner banner;
 
     private ArrayList<FoodBean> foodBeans;
-    private ArrayList<String> imgs =new ArrayList<>();
+    private ArrayList<String> imgs = new ArrayList<>();
+
+    @Override
+    protected void intData() {
+
+    }
 
     @Override
     protected void initView() {
@@ -95,10 +100,12 @@ public class HomeFragment extends BaseFragment<BaseView, HomePresent> implements
     }
 
     private void setBanner() {
+      imgs.clear();
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/4.jpg");
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/1.jpg");
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/4.jpg");
         imgs.add("http://sssm.test.zhonghuass.cn/public/image/home/1.jpg");
+
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(imgs);
@@ -163,7 +170,6 @@ public class HomeFragment extends BaseFragment<BaseView, HomePresent> implements
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
 
 

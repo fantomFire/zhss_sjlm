@@ -2,6 +2,7 @@ package com.zhss.zhss_sjlm.apiserver;
 
 
 import com.zhss.zhss_sjlm.bean.CategreyBean;
+import com.zhss.zhss_sjlm.bean.DiscoverTitleBean;
 import com.zhss.zhss_sjlm.bean.LoginBean;
 import com.zhss.zhss_sjlm.bean.MineInfoBean;
 import com.zhss.zhss_sjlm.bean.RegistBean;
@@ -42,18 +43,7 @@ public interface ApiService {
     //个人中心
     @GET("userinfo/index")
     Observable<MineInfoBean> getUserInfo(@Query("uid")String uid);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //发现栏目
+    @GET("Find/findindex")
+    Observable<DiscoverTitleBean> getDiscoverTitle();
 }

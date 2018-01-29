@@ -85,16 +85,17 @@
 
             <include layout="@layout/viewbackground" />
 
-            <com.youth.banner.Banner
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
 
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
-                app:indicator_drawable_selected="@drawable/shape_20"
-                android:layout_height="180dp" />
-            <!--  app:indicator_height="20dp"
-              app:indicator_width="20dp"
-              app:indicator_margin="3dp"-->
+                android:layout_height="180dp"
+                app:indicator_drawable_selected="@drawable/page_indicator_focused"
+                app:indicator_drawable_unselected="@drawable/page_indicator_unfocused"
+                app:indicator_height="15dp"
+                app:indicator_margin="6dp"
+                app:indicator_width="15dp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"

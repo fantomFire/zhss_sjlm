@@ -11,6 +11,11 @@ import com.zhss.zhss_sjlm.view.BaseView;
 
 public class MineFragment extends BaseFragment<BaseView,MinePresent> implements BaseView{
     @Override
+    protected void intData() {
+
+    }
+
+    @Override
     protected void initView() {
 
     }
