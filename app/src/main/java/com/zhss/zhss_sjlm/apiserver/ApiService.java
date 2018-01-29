@@ -2,6 +2,7 @@ package com.zhss.zhss_sjlm.apiserver;
 
 
 import com.zhss.zhss_sjlm.bean.CategreyBean;
+import com.zhss.zhss_sjlm.bean.DiscoverBean;
 import com.zhss.zhss_sjlm.bean.DiscoverTitleBean;
 import com.zhss.zhss_sjlm.bean.LoginBean;
 import com.zhss.zhss_sjlm.bean.MineInfoBean;
@@ -46,4 +47,7 @@ public interface ApiService {
     //发现栏目
     @GET("Find/findindex")
     Observable<DiscoverTitleBean> getDiscoverTitle();
+    //栏目信息
+    @GET("Find/goodsdex")
+    Observable<DiscoverBean> getItemData(@Query("find") String find);
 }

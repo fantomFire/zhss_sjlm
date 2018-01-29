@@ -48,7 +48,7 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
         intData();
     }
 
-    protected abstract void intData();
+    protected  void intData(){};
 
     protected abstract void initView();
 

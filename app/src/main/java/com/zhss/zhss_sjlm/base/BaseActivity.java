@@ -27,6 +27,7 @@ public abstract class BaseActivity<V extends MvpView,T extends BasePresent<V>> e
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
        // this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉状态栏
         getSupportActionBar().hide();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//禁止横屏

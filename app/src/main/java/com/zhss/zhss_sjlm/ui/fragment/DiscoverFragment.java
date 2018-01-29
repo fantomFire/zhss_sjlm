@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.github.nukc.stateview.StateView;
 import com.zhss.zhss_sjlm.R;
@@ -59,8 +58,8 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
 
     }
 
-    @Override
-    protected void intData() {
+
+    protected void initdatas() {
         if (mtitles == null) {
             return;
         }
@@ -69,7 +68,7 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
             itemFragment = new ItemFragment();
             fragments.add(itemFragment);
         }
-        System.out.println("mfragemt"+fragments.size());
+
         //给viewpager 设置adapter
         discoverVp.setAdapter(new FrageVpAdapter(getChildFragmentManager(), fragments));
         discoverVp.requestDisallowInterceptTouchEvent(true);
@@ -82,6 +81,8 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
             @Override
             public void onPageSelected(int position) {
                 discoverMigic.onPageSelected(position);
+                itemFragment.setIndex(mtitles.get(position).getFind_id());
+
             }
 
             @Override
@@ -89,6 +90,10 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
                 discoverMigic.onPageScrollStateChanged(state);
             }
         });
+        discoverVp.setOffscreenPageLimit(mtitles.size());
+        discoverVp.setCurrentItem(0);
+        //栏目数据正确 设置
+        initTitle();
     }
 
 
@@ -108,13 +113,16 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
                 simplePagerTitleView.setTextSize(17);
                 simplePagerTitleView.setNormalColor(Color.parseColor("#444444"));
                 simplePagerTitleView.setSelectedColor(Color.parseColor("#df1839"));
-
+                System.out.println("vp+=="+discoverVp.getCurrentItem());
+                System.out.println("vp++++"+i);
                 simplePagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        System.out.println("点击"+discoverVp.getCurrentItem());
+                        System.out.println("点击++++"+i);
                         discoverVp.setCurrentItem(i);
-                        System.out.println("当前"+i);
+                        itemFragment.setIndex(mtitles.get(i).getFind_id());
+
 
                     }
                 });
@@ -149,23 +157,19 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
     @Override
     public void loadSuccess(Object data) {
         DiscoverTitleBean datas = (DiscoverTitleBean) data;
+        System.out.println(data);
         if (datas.getStatus().equals("200")) {
           //  mstateview.showContent();
             mtitles = datas.getData();
-            //栏目数据正确 设置
-            initTitle();
-        } else {
-            Toast.makeText(mContext, "栏目数据有误!", Toast.LENGTH_SHORT).show();
-
-
+          initdatas();
+          initTitle();
         }
 
     }
 
     @Override
     public void loadFail(Object data) {
-
-        Toast.makeText(mContext, "栏目数据有误!", Toast.LENGTH_SHORT).show();
+        System.out.println(data.toString());
     }
 
     @Override

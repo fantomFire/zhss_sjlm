@@ -1,5 +1,6 @@
 package com.zhss.zhss_sjlm.ui.adapter;
 
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -27,5 +28,10 @@ public class FrageVpAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return fragments==null?0:fragments.size();
+    }
+
+    @Override
+    public Parcelable saveState() {
+        return null;
     }
 }

@@ -56,5 +56,21 @@ public class DiscoverTitleBean {
         public void setFind_name(String find_name) {
             this.find_name = find_name;
         }
+
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "find_id='" + find_id + '\'' +
+                    ", find_name='" + find_name + '\'' +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "DiscoverTitleBean{" +
+                "status='" + status + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

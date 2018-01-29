@@ -20,8 +20,9 @@ public class DiscoverPresent extends BasePresent<BaseView> {
 
             @Override
             public void onError(Throwable e) {
-            getView().loadFail("栏目数据错误!");
+                e.printStackTrace();
             }
+
 
             @Override
             public void onNext(DiscoverTitleBean data) {
