@@ -70,7 +70,7 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
         }
 
         //给viewpager 设置adapter
-        discoverVp.setAdapter(new FrageVpAdapter(getChildFragmentManager(), fragments));
+        discoverVp.setAdapter(new FrageVpAdapter(getFragmentManager(), fragments));
         discoverVp.requestDisallowInterceptTouchEvent(true);
         discoverVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -100,6 +100,7 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
     //设置栏目数据
     private void initTitle() {
         CommonNavigator commonNavigator = new CommonNavigator(mContext);
+        commonNavigator.setAdjustMode(true);
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
             @Override
             public int getCount() {
