@@ -114,15 +114,13 @@ public class DiscoverFragment extends BaseFragment<BaseView, DiscoverPresent> im
                 simplePagerTitleView.setTextSize(17);
                 simplePagerTitleView.setNormalColor(Color.parseColor("#444444"));
                 simplePagerTitleView.setSelectedColor(Color.parseColor("#df1839"));
-                System.out.println("vp+=="+discoverVp.getCurrentItem());
-                System.out.println("vp++++"+i);
+
                 simplePagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        System.out.println("点击"+discoverVp.getCurrentItem());
-                        System.out.println("点击++++"+i);
-                        discoverVp.setCurrentItem(i);
-                        itemFragment.setIndex(mtitles.get(i).getFind_id());
+
+                        discoverVp.setCurrentItem(i,false);
+                       // itemFragment.setIndex(mtitles.get(i).getFind_id());
 
 
                     }

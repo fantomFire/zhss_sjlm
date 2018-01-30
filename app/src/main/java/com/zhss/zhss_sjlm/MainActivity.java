@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhss.zhss_sjlm.tools.PrefUtils;
+import com.zhss.zhss_sjlm.tools.StatusBarUtils;
 import com.zhss.zhss_sjlm.ui.adapter.MyPagerAdapter;
 import com.zhss.zhss_sjlm.ui.fragment.ClassifyFragment;
 import com.zhss.zhss_sjlm.ui.fragment.DiscoverFragment;
@@ -68,6 +69,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayout());
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.statusBarColor));
         bind = ButterKnife.bind(this);
         initView();
         initData();
@@ -99,10 +101,10 @@ public class MainActivity extends FragmentActivity {
             mineFragment = new MineFragment();
             mPagers.add(mineFragment);
         }
-        myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), mPagers);
+        myPagerAdapter = new MyPagerAdapter(this.getFragmentManager(), mPagers);
         mViewPager.setAdapter(myPagerAdapter);
         mViewPager.requestDisallowInterceptTouchEvent(true);
-        mViewPager.setCurrentItem(0);
+        mViewPager.setCurrentItem(0,false);
 
     }
 

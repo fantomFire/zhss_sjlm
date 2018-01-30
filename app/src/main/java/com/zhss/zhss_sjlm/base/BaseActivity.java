@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import com.github.nukc.stateview.StateView;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.hannesdorfmann.mosby.mvp.MvpView;
+import com.zhss.zhss_sjlm.R;
+import com.zhss.zhss_sjlm.tools.StatusBarUtils;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -31,6 +33,7 @@ public abstract class BaseActivity<V extends MvpView,T extends BasePresent<V>> e
        // this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉状态栏
         getSupportActionBar().hide();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//禁止横屏
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.statusBarColor));
         setContentView(getLayout());
 
         bind = ButterKnife.bind(this);

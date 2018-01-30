@@ -1,8 +1,8 @@
 package com.zhss.zhss_sjlm.ui.adapter;
 
-import android.os.Parcelable;
+
+import android.app.FragmentManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 
@@ -19,9 +19,11 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
     private List<Fragment> mPagers = new ArrayList<Fragment>();
     private FragmentManager fm;
 
-    public MyPagerAdapter(FragmentManager fm, List<Fragment> mPagers) {
-        super(fm);
-        this.fm = fm;
+
+
+    public MyPagerAdapter(FragmentManager fragmentManager, ArrayList<Fragment> mPagers) {
+        super(fragmentManager);
+        this.fm = fragmentManager;
         this.mPagers = mPagers;
     }
 
@@ -45,8 +47,8 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
         super.destroyItem(container, position, object);
     }
 
-    @Override
+    /*@Override
     public Parcelable saveState() {
         return null;
-    }
+    }*/
 }
