@@ -23,7 +23,7 @@ import java.util.List;
 public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
 
     private Context mContext;
-    private List<CategreyBean.MsgBean> dataList ;
+    private List<CategreyBean.MsgBean> dataList;
 
     private GridView gridView;
 
@@ -34,12 +34,12 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return dataList==null?0:dataList.size();
+        return dataList == null ? 0 : dataList.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-       // return dataList.get(groupPosition).getContent()==null?0:dataList.get(groupPosition).getContent().size();
+        // return dataList.get(groupPosition).getContent()==null?0:dataList.get(groupPosition).getContent().size();
         return 1;
     }
 
@@ -86,7 +86,7 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
             ivGroup.setImageResource(R.mipmap.ico2);
         }
         // 设置分组组名
-       tvGroup.setText(dataList.get(groupPosition).getClass_name());
+        tvGroup.setText(dataList.get(groupPosition).getClass_name());
         return convertView;
     }
 
@@ -98,16 +98,14 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
         }
         // 因为 convertView 的布局就是一个 GridView，
         // 所以可以向下转型为 GridView
-        gridView = (GridView) convertView;
+        gridView = (GridView) convertView.findViewById(R.id.gridview);
         // 创建 GridView 适配器
         List<CategreyBean.MsgBean.ContentBean> msgBean = dataList.get(groupPosition).getContent();
-        if(msgBean!=null){
-
-            MyGridViewAdapter gridViewAdapter = new MyGridViewAdapter(mContext,msgBean );
+        if (msgBean != null) {
+            MyGridViewAdapter gridViewAdapter = new MyGridViewAdapter(mContext, msgBean);
             gridView.setAdapter(gridViewAdapter);
         }
-
-      //  gridView.setAdapter(gridViewAdapter);
+        //  gridView.setAdapter(gridViewAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -115,6 +113,10 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
                         (position + 1) + "项", Toast.LENGTH_SHORT).show();
             }
         });
+       /* View mView = new View(mContext);
+        RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 6);
+        mView.setLayoutParams(params);
+        gridView.addView(mView);*/
         return convertView;
     }
 

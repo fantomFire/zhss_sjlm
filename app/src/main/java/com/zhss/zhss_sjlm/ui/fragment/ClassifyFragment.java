@@ -9,6 +9,7 @@ import com.zhss.zhss_sjlm.present.CateGreyPresent;
 import com.zhss.zhss_sjlm.ui.adapter.MyExpandableListViewAdapter;
 import com.zhss.zhss_sjlm.view.BaseView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -22,7 +23,7 @@ public class ClassifyFragment extends BaseFragment<BaseView, CateGreyPresent> im
     @BindView(R.id.expandableList)
     ExpandableListView expandableList;
 
-    private List<CategreyBean.MsgBean> dataList;
+    private List<CategreyBean.MsgBean> dataList = new ArrayList<>();
     private MyExpandableListViewAdapter adapter;
 
     @Override
@@ -55,22 +56,19 @@ public class ClassifyFragment extends BaseFragment<BaseView, CateGreyPresent> im
     public void loadSuccess(Object data) {
         CategreyBean datas = (CategreyBean) data;
         if (datas.getStatus().equals("200")) {
+            dataList.clear();
             dataList = datas.getMsg();
-            System.out.println("分类=="+dataList.size());
-          adapter.setData(dataList);
+            System.out.println("分类==" + dataList.size());
+            adapter.setData(dataList);
             adapter.notifyDataSetChanged();
         }
     }
 
 
-
-
-        @Override
+    @Override
     public void loadFail(Object data) {
 
     }
-
-
 
 
 }

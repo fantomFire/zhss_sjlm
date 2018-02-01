@@ -101,10 +101,11 @@ public class MainActivity extends FragmentActivity {
             mineFragment = new MineFragment();
             mPagers.add(mineFragment);
         }
-        myPagerAdapter = new MyPagerAdapter(this.getFragmentManager(), mPagers);
+        myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), mPagers);
         mViewPager.setAdapter(myPagerAdapter);
         mViewPager.requestDisallowInterceptTouchEvent(true);
         mViewPager.setCurrentItem(0,false);
+        mViewPager.setOffscreenPageLimit(mPagers.size());
 
     }
 

@@ -60,7 +60,9 @@ public abstract class BaseFragment<V extends MvpView, T extends BasePresent<V>> 
 
     @Override
     public void onDestroy() {
+
         super.onDestroy();
+
         if (unbinder != null) {
 
             unbinder.unbind();
